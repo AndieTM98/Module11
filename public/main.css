@@ -1,0 +1,78 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  margin-top: 150px;
+  background: #fdf5f8;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+/* Navigation bar */
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  padding: 30px;
+  background: #c53062;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-bottom: 5px solid #720e2a;
+  z-index: 2;
+}
+#nav a {
+  display: inline-block;
+  margin-right: 20px;
+  color: white;
+  opacity: 0.7;
+  transition: 0.2 ease color;
+}
+#nav a.router-link-active,
+#nav a:hover {
+  opacity: 1;
+}
+
+/* Button styles */
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #c53062;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease background;
+}
+.btn:hover {
+  background: #720e2a;
+}
+
+.content-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-top: 20px;
+}
+

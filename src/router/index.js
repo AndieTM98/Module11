@@ -1,5 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import QuoteGenerator from '../views/QuoteGenerator.vue'
 
 const routes = [
   {
@@ -8,18 +9,32 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
+    path: '/:id(\\d+)?/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue')
+  },
+  {
+    path: '/:id(\\d+)?/quote-generator',
+    name: 'quote-generator',
+    component: () => import('../views/QuoteGenerator.vue')
+  },
+  {
+    path: '/:id(\\d+)?/contact',
+    name: 'contact',
+    component: () => import('../views/Contact.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('../components/NotFound.vue')
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHashHistory(process.env.BASE_URL),
+  routes,
+  linkActiveClass: 'active'
 })
 
 export default router
+
